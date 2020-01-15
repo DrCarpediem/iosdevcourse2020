@@ -15,11 +15,11 @@ constInteger
 
 //let constDouble: Double = 0.0
 let constMaxUInt: UInt = UInt.max
-//максимально возможное значение UInt - не может быть отрицательным
+//максимально возможное значение UInt; UInt не может быть отрицательным
 constMaxUInt
 let newConst = constInteger
 newConst
-var variable: Int =  constInteger
+var variable: Int = constInteger
 variable = 55
 variable
 var variable2 = variable + 1
@@ -62,3 +62,14 @@ var newLine = "\n"
 var string2 = "string"
 
 string+newLine+string2
+
+//HW - home work
+let constHW: Int = 7
+var variableHW: Int = 13
+var sumHW: Int = constHW + variableHW
+// var sumHW = constHW + variableHW
+sumHW = constHW * variableHW
+var doubleHW: Double = 3.141592653589793238462643
+var trueBooleanHW: Bool = constHW < variableHW
+var falseBooleanHW: Bool = constHW > variableHW
+var stringHW: String = "Это последнее задание!"
