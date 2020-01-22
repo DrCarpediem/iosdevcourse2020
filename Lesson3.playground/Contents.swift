@@ -203,17 +203,18 @@ if const1 > const2 {
 
 // 2. Создать несколько переменных и вывести в консоль результат их сложения.
 
-var variable1 = 1
-var variable2 = 2
-var variable3 = 3
-print (variable1+variable2+variable3)
+var a = 1
+var b = 2
+var c = 3
+var d = a + b + c
+print (d)
 
 // 3. Составить алгоритм увеличения всех трех ранее созданных переменных на 5,если среди них есть хотя бы две равные. В противном случае выдать ответ «равных нет».
 
-if variable1 == variable2 || variable2 == variable3 || variable1 == variable3 {
-    variable1 + 5
-    variable2 + 5
-    variable3 + 5
+if a == b || a == c || b == c {
+    a += 5
+    b += 5
+    c += 5
 } else {
     print ("равных нет")
 }
