@@ -65,6 +65,22 @@ d.doWork()
 class Manager: Employee {
     
     var teamSize = 0
+    var bonus: Int {
+//        this is a computed property
+//        when it's accessed, the code in here will run
+//        then we'll return the value
+        
+        return teamSize * 1000
+    }
+    
+    init(_ name:String, _ team:Int){
+        
+//        this calls the init of the Employee class
+        super.init(name)
+        
+//        additional init work
+        self.teamSize = team
+    }
     
     override func doWork() {
 //        it executes the doWork from employee
@@ -80,7 +96,7 @@ class Manager: Employee {
     
 }
 
-var m = Manager("")
+var m = Manager("", 10)
 m.name = "Maggie"
 m.salary = 2000
 m.role = "Manager of IT"
@@ -98,3 +114,5 @@ let myEmployee = Employee ("Joe")
 print(myEmployee.name)
 print(myEmployee.role)
 
+let m2  = Manager("Kate", 11)
+print(m.bonus)

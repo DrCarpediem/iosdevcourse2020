@@ -264,19 +264,23 @@ newClosure(1, "Hello", 1.0)
 
     //1. Write a Swift program to check if two given arrays of integers have 0 as their first element.
 
-//let Array1 = [1, 3, 5, 7, 10]
-//let Array2 = [0, 2, 4, 6, 8]
-//let arrayFirstElement1 = Array1.first
-//let arrayFirstElement2 = Array2.first
-//if arrayFirstElement1 == 0 || arrayFirstElement2 == 0 {
-//    print ("Zero is out there")
-//} else {
-//    print ("Don't give up!")
-//}
+//1st variant
+
+let Array1 = [1, 3, 5, 7, 10]
+let Array2 = [0, 2, 4, 6, 8]
+let arrayFirstElement1 = Array1.first
+let arrayFirstElement2 = Array2.first
+if arrayFirstElement1 == 0 || arrayFirstElement2 == 0 {
+    print ("Zero is out there")
+} else {
+    print ("Don't give up!")
+}
+
+//2nd variant
 
 func firstElementZero (_ Array1:[Int], _ Array2:[Int]) -> Bool {
     
-    if Array1.first == 0 || Array2.first == 0 {
+    if Array1.first == 0 && Array2.first == 0 {
         
         return true
     } else {
@@ -291,10 +295,10 @@ print(firstElementZero([1, 3, 5, 7, 10],[1, 2, 4, 6, 8]))
 
 func containsThreeOrFive (_ myArray: [Int]) -> Bool {
     
-    if myArray.contains(3) || myArray.contains(5) {
-        return false
-    } else {
+    if !myArray.contains(3) || !myArray.contains(5) {
         return true
+    } else {
+        return false
     }
 }
 print(containsThreeOrFive([2,4,6,5,7]))
@@ -313,6 +317,9 @@ func equalFirstAndLast (_ myArray: [Int]) -> Bool {
     
 }
 print(equalFirstAndLast([2,4,6,5,2]))
+
+//!myArray.isEmpty
+
 
 
     //4. Write a Swift program that creates Array, adds an item, remove item, modify item and then prints size of the array.
@@ -352,6 +359,8 @@ let mySetSize = mySet.count
 print(mySetSize)
 
     //7. Create 2 arrays, and merge them.
+
+//let newArray = Array(repeating: 2, count: 7) -
 
 
 //1st variant
@@ -396,8 +405,35 @@ let mergedArray4 = [myArray11, myArray12].reduce([], { (result: [Int], element: 
 print(mergedArray4)
 
 
-
-
-
     //8. Write a closure to sum 2 integers, pass closure as argument to function, where return the result of calling that closure.
 
+func makeSum () -> (_ a: Int, _ b: Int) -> Int {
+    return  {(a,b) in a + b}
+}
+
+
+let sumFunc = makeSum()
+print(sumFunc(5, 7))
+
+
+
+
+//2
+
+var intC: (Int, Int) -> Int = {int1, int2 in
+    return int1 + int2
+}
+
+func func1 (int1: Int, int2: Int, closure: (Int, Int) -> Int) {
+    let var1 = closure (int1, int2)+10
+    print(var1)
+}
+
+print (func1(int1: 2, int2: 4, closure: intC))
+
+func func1 (int1: Int, int2: Int) -> Int {
+    let var1 = intC (int1, int2)+10
+    print(var1)
+}
+
+print (func1(int1: 2, int2: 4, closure: (1, 3)))
